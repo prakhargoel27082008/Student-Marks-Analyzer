@@ -20,8 +20,10 @@ def check_status(row):
             return "Fail"
         else:
             return "Pass"
+# Read Students Data
 data = pd.read_csv("data/students.csv")
 subjects = ["Maths", "Physics", "Chemistry", "English"]
+# Calculate Total, Average,  Percentage and Status
 data["Total"] = data[subjects].sum(axis=1)
 data["Average"] = data[subjects].mean(axis=1)
 data["Percentage"] = (data["Total"]/400)*100
@@ -32,8 +34,12 @@ topper = data.loc[data["Total"].idxmax()]
 ranked_data = data.sort_values(by = "Total", ascending=False)
 print("\n Ranked Data")
 print(ranked_data.to_string())
-print("\n Topper")
-print(topper["Name"])
+print("\n========================")
+print("🏆 TOPPER")
+print("========================")
+print("Name :", topper["Name"])
+print("Total:", topper["Total"])
+print("Grade:", topper["Grade"])
 ranked_data.insert(0, "Rank", range(1, len(ranked_data) + 1))
 print(
     ranked_data[["Rank", "Name", "Total", "Percentage", "Grade", "Status"]]
