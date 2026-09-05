@@ -1,6 +1,6 @@
 # 📊 Student Marks Analyzer
 
-A beginner-friendly Python project that analyzes student marks using **Pandas** and **Matplotlib**.
+A Python-based Student Marks Analyzer that calculates grades, ranks students, generates visualizations, and exports results using Pandas and Matplotlib.
 
 ## 🚀 Features
 
